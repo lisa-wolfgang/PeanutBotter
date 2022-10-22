@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const fetch = require("node-fetch");
+const fetch = import("node-fetch");
 const home = require("home");
 const config = require(home.resolve() + "/config.json");
 module.exports = {
