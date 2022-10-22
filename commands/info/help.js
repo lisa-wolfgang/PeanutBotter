@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
-const config = require('/home/runner/PeanutBotter/config.json');
+const home = require("home");
+const config = require(home.resolve() + "/config.json");
 module.exports = {
 	name: 'help',
   aliases: ['commands', 'stop', 'exit', 'tutorial'],

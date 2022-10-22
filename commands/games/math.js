@@ -1,4 +1,5 @@
-const config = require('/home/runner/PeanutBotter/config.json');
+const home = require("home");
+const config = require(home.resolve() + "/config.json");
 module.exports = {
 	name: 'math',
   aliases: ['mathh', 'maths', 'facts', 'algebra', 'calculate', 'calculator'],
@@ -30,9 +31,9 @@ module.exports = {
 
     function question() {
       message.channel.send(`What is ${pick} ${pickType} ${pick2}?`);
-      gamePosted = fs.readFileSync('/home/runner/PeanutBotter/gamePosted.csv', 'utf-8').split(",")
+      gamePosted = fs.readFileSync(home.resolve() + "/gamePosted.csv", "utf-8").split(",");
       gamePosted[serverIndex] = true
-      fs.writeFileSync('/home/runner/PeanutBotter/gamePosted.csv', gamePosted)
+      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted);
     }
     
   },

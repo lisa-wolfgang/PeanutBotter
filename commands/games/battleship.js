@@ -1,4 +1,5 @@
-const config = require('/home/runner/PeanutBotter/config.json');
+const home = require("home");
+const config = require(home.resolve() + "/config.json");
 module.exports = {
 	name: 'battleship',
   aliases: ['battleships'],
@@ -60,10 +61,8 @@ module.exports = {
       puzzle += '\`'
       launch = true;
       if (hit == -1) {
-        message.channel.send(puzzle).then((message) => {solutionMsg = message});
-        gamePosted = fs.readFileSync('/home/runner/PeanutBotter/gamePosted.csv', 'utf-8').split(",")
-        gamePosted[serverIndex] = true
-        fs.writeFileSync('/home/runner/PeanutBotter/gamePosted.csv', gamePosted)
+        gamePosted = fs.readFileSync(home.resolve() + "/gamePosted.csv", "utf-8").split(",");
+        fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted);
         if (devMode) {
           console.log(initAnswer);
         }

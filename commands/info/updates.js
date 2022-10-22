@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const config = require('/home/runner/PeanutBotter/config.json')
-module.exports = {
+const home = require("home");
+const config = require(home.resolve() + "/config.json");module.exports = {
 	name: 'updates',
   aliases: ['version', 'changelog', 'update', 'log'],
 	description: 'Sends a changelog, letting you know what\'s new!',

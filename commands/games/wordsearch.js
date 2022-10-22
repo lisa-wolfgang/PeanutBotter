@@ -1,4 +1,5 @@
-const config = require('/home/runner/PeanutBotter/config.json');
+const home = require("home");
+const config = require(home.resolve() + "/config.json");
 module.exports = {
 	name: 'wordsearch',
   aliases: ['wordwearch', 'crossword'],
@@ -81,12 +82,8 @@ module.exports = {
           puzzleSolved = puzzleSolved + '\`\n\`'
         }
       }
-      puzzle += '\`'
-      puzzleSolved += '\`'
-      message.channel.send(puzzle).then((message) => {solutionMsg = message});
-      gamePosted = fs.readFileSync('/home/runner/PeanutBotter/gamePosted.csv', 'utf-8').split(",")
-      gamePosted[serverIndex] = true
-      fs.writeFileSync('/home/runner/PeanutBotter/gamePosted.csv', gamePosted)
+      gamePosted = fs.readFileSync(home.resolve() + "/gamePosted.csv", "utf-8").split(",");
+      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted);
       if (devMode) {
         console.log(`${pick} can be located in ${puzzlePos} orientation at \(${puzzlePlaceX}, ${puzzlePlaceY}\)`);
       }

@@ -1,7 +1,5 @@
-const Discord = require('discord.js');
-const config = require('/home/runner/PeanutBotter/config.json');
-const dateCreated = new Date(2020, 7, 16)
-var today = new Date()
+const home = require("home");
+const config = require(home.resolve() + "/config.json");
 const greenCatBot = process.env.GREENCATBOT;
 var ageString;
 var ageDays;

@@ -1,6 +1,5 @@
-const Discord = require('discord.js');
-const fetch = require('node-fetch');
-const config = require('/home/runner/PeanutBotter/config.json');
+const home = require("home");
+const config = require(home.resolve() + "/config.json");
 module.exports = {
 	name: 'messages',
   aliases: [],
@@ -16,7 +15,7 @@ module.exports = {
     var tempKey;
     var keysLength;
     if (botReadDB == 0) {
-      const command = require(`/home/runner/PeanutBotter/commands/messages.js`);
+      const command = require(home.resolve() + `/commands/messages.js`);
       db.list().then(keys => {
         if (keys.length == 0) return;
         databaseLoad(command, keys, i);
