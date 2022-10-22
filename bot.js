@@ -29,7 +29,7 @@ module.exports = function bot() {
   var servers = [];
   var gameInProgress = [];
   var gamePostedPush = [];
-  fs.writeFileSync("././gamePosted.csv", "[]");
+  fs.writeFileSync("./gamePosted.csv", "[]");
   var gameType = [];
   var hardMode = [];
   var pick = [];
@@ -53,7 +53,7 @@ module.exports = function bot() {
     gameInProgress.push(false);
     gamePostedPush = fs.readFileSync("./gamePosted.csv", "utf-8").split(",");
     gamePostedPush.push(false);
-    fs.writeFileSync("././gamePosted.csv", gamePostedPush);
+    fs.writeFileSync("./gamePosted.csv", gamePostedPush.join(","));
     gameType.push("");
     hardMode.push(false);
     pick.push("");
@@ -446,7 +446,7 @@ module.exports = function bot() {
     gameInProgress[serverIndex] = false;
     gamePostedPush = fs.readFileSync("./gamePosted.csv", "utf-8").split(",");
     gamePostedPush[serverIndex] = false;
-    fs.writeFileSync("./gamePosted.csv", gamePostedPush);
+    fs.writeFileSync("./gamePosted.csv", gamePostedPush.join(","));
     skip[serverIndex] = false;
     botMode[serverIndex] = false;
     shieldOn[serverIndex] = false;

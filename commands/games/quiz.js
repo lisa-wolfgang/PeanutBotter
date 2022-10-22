@@ -36,7 +36,7 @@ module.exports = {
       message.channel.send(games.questions[pick]);
       gamePosted = fs.readFileSync(home.resolve() + "/gamePosted.csv", "utf-8").split(",");
       gamePosted[serverIndex] = true;
-      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted);
+      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted.join(","));
       //console.log(games.questions[pick])
       //console.log(games.answers[pick])
     }

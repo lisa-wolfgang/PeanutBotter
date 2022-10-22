@@ -95,7 +95,7 @@ module.exports = {
       });
       gamePosted = fs.readFileSync(home.resolve() + "/gamePosted.csv", "utf-8").split(",");
       gamePosted[serverIndex] = true;
-      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted);
+      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted.join(","));
       if (devMode) {
         console.log(`${pick} can be located in ${puzzlePos} orientation at \(${puzzlePlaceX}, ${puzzlePlaceY}\)`);
       }

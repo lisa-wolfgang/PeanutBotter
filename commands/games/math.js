@@ -39,7 +39,7 @@ module.exports = {
       message.channel.send(`What is ${pick} ${pickType} ${pick2}?`);
       gamePosted = fs.readFileSync(home.resolve() + "/gamePosted.csv", "utf-8").split(",");
       gamePosted[serverIndex] = true;
-      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted);
+      fs.writeFileSync(home.resolve() + "/gamePosted.csv", gamePosted.join(","));
     }
   }
 };
