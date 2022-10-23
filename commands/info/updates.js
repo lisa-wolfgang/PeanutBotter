@@ -6,7 +6,7 @@ module.exports = {
   aliases: ["version", "changelog", "update", "log"],
   description: "Sends a changelog, letting you know what's new!",
   execute(serverIndex, message, args, games, gameInProgress, pick, pick2, pickType, skip, devMode) {
-    var helpEmbed;
+    let helpEmbed;
     if (args[0] != "old") {
       helpEmbed = new Discord.MessageEmbed()
         .setColor("#fca821")

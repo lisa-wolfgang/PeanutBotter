@@ -9,7 +9,7 @@ module.exports = {
     if (skip || devMode || args.includes("skip")) {
       question();
     } else {
-      var timer = 3;
+      let timer = 3;
 
       message.channel.send(`Get ready to crunch some numbers! ${message.author} has started a math race! The race will start in 20 seconds.\n\n**HOW TO PLAY**\nThe goal of this game is to earn 5 points.\nWhen a question appears, simply type in your answer and send it.\nThe first person to answer the question correctly gets a point!\n\nTIP: In the future, type \`${config.prefix} math skip\` to start the game right away.`);
       if (args.includes("hard")) {

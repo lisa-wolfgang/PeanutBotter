@@ -6,14 +6,14 @@ module.exports = {
   description: "Starts a game of competitive word search!\n\n**HOW TO PLAY**\nWhen the puzzle appears, look for the hidden 6-letter word. Words can be hidden horizontally, vertically, and in reverse. Once you find it, simply type it in and send it.\nThe first person to answer correctly wins!",
   execute(serverIndex, message, args, games, gamePosted, pick, pick2, pickType, skip, devMode, client) {
     const fs = require("fs");
-    var puzzle = "`";
-    var puzzleSolved = "`";
-    var solution = pick;
-    var solutionMsg;
-    var solutionGive = false;
+    let puzzle = "`";
+    let puzzleSolved = "`";
+    let solution = pick;
+    let solutionMsg;
+    let solutionGive = false;
 
     if (!devMode && !args.includes("skip")) {
-      var timer = 5;
+      let timer = 5;
 
       message.channel.send(`Hope you've topped up on your carrots! ${message.author} has started a game of word search! The puzzle will appear in 20 seconds.\n\n**HOW TO PLAY**\nWhen the puzzle appears, look for the hidden 6-letter word. Words can be hidden horizontally, vertically, and in reverse. Once you find it, simply type it in and send it.\nThe first person to answer correctly wins!\n\nTIP: In the future, type \`${config.prefix} wordsearch skip\` to start the game right away.`);
       if (args.includes("hard")) {
@@ -42,8 +42,8 @@ module.exports = {
     }
 
     function question() {
-      var gridX;
-      var gridY;
+      let gridX;
+      let gridY;
       if (args.includes("hard")) {
         gridX = 20;
         gridY = 20;
@@ -51,10 +51,10 @@ module.exports = {
         gridX = 10;
         gridY = 10;
       }
-      var puzzlePlaceX = Math.floor(Math.random() * (gridX + 1));
-      var puzzlePlaceY = Math.floor(Math.random() * (gridY + 1));
-      var puzzlePos;
-      var pickLetter = 0;
+      let puzzlePlaceX = Math.floor(Math.random() * (gridX + 1));
+      let puzzlePlaceY = Math.floor(Math.random() * (gridY + 1));
+      let puzzlePos;
+      let pickLetter = 0;
       if (Math.floor(Math.random() * 2) == 1) {
         puzzlePos = "horizontal";
       } else {

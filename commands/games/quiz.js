@@ -7,7 +7,7 @@ module.exports = {
   execute(serverIndex, message, args, games, gamePosted, pick, pick2, pickType, skip, devMode) {
     const fs = require("fs");
     if (!devMode && !args.includes("skip")) {
-      var timer = 5;
+      let timer = 5;
 
       message.channel.send(`Oo, how exciting! ${message.author} has started a quiz game! The question will appear in 20 seconds.\n\n**HOW TO PLAY**\nWhen the question appears, simply type in your answer and send it.\nIf the question asks for a number, always enter it in numeric form (1234567890) with no place separators (1000: NOT 1,000) and no units.\n\nThe first person to answer correctly wins!\n\nTIP: In the future, type \`${config.prefix} quiz skip\` to start the game right away.`);
       setTimeout(() => {

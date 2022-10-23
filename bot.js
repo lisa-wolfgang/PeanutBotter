@@ -7,7 +7,7 @@ module.exports = function bot() {
   const keep_alive = require("./keep_alive.js");
   const config = require("./config.json");
   const games = require("./games.json");
-  var client = new Discord.Client();
+  let client = new Discord.Client();
   client.commands = new Discord.Collection();
   const commandFolders = fs.readdirSync("./commands");
   for (const folder of commandFolders) {
@@ -23,30 +23,30 @@ module.exports = function bot() {
   const fyre = process.env.FYRE;
 
   // Variables - any value that might change and placeholders for value storage
-  var args;
-  var command;
+  let args;
+  let command;
 
-  var servers = [];
-  var gameInProgress = [];
-  var gamePostedPush = [];
+  let servers = [];
+  let gameInProgress = [];
+  let gamePostedPush = [];
   fs.writeFileSync("./gamePosted.csv", "[]");
-  var gameType = [];
-  var hardMode = [];
-  var pick = [];
-  var pick2 = [];
-  var pickType = [];
-  var correctAnswer = [];
-  var initAnswer = [];
-  var skip = [];
-  var players = [];
-  var points = [];
-  var hintGiven = [];
-  var hintID = [];
-  var gameID = [];
-  var botMode = [];
-  var shieldOn = [];
-  var shieldRemind = [];
-  var shieldAuthor = [];
+  let gameType = [];
+  let hardMode = [];
+  let pick = [];
+  let pick2 = [];
+  let pickType = [];
+  let correctAnswer = [];
+  let initAnswer = [];
+  let skip = [];
+  let players = [];
+  let points = [];
+  let hintGiven = [];
+  let hintID = [];
+  let gameID = [];
+  let botMode = [];
+  let shieldOn = [];
+  let shieldRemind = [];
+  let shieldAuthor = [];
 
   function addServer(serverID) {
     servers.push(serverID);
@@ -76,13 +76,13 @@ module.exports = function bot() {
   // Developer dashboard
 
   // Keep shut off - set to true to prevent the repl from automatically running on its own
-  var shutOff = config.shutOff;
+  let shutOff = config.shutOff;
   if (shutOff) {
     throw new Error("The bot has been manually shut off. Toggle this in index.js to re-enable it.");
   }
 
   // Toggle devMode - this allows whoever is set as the bot owner to test potentially unstable features without the risk of others breaking something
-  var devMode = config.devMode;
+  let devMode = config.devMode;
   if (devMode) {
     console.log("Devmode has been enabled. If this isn't intended, be sure to disable it and restart the bot.");
   }
@@ -173,7 +173,7 @@ module.exports = function bot() {
             }
             // When an answer is submitted during a game with a points system
           } else if (points[serverIndex].indexOf(5) == -1) {
-            var scoreIndex = players[serverIndex].indexOf(message.author.id);
+            let scoreIndex = players[serverIndex].indexOf(message.author.id);
             if (scoreIndex == -1) {
               players[serverIndex][players[serverIndex].length] = message.author.id;
               scoreIndex = players[serverIndex].indexOf(message.author.id);
@@ -395,7 +395,7 @@ module.exports = function bot() {
 
   // Randomly creates a math problem for the math game
   function newMath(serverIndex) {
-    var mathPicker;
+    let mathPicker;
     if (hardMode[serverIndex]) {
       mathPicker = Math.floor(Math.random() * 4);
     } else {

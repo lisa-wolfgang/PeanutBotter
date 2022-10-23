@@ -7,15 +7,15 @@ module.exports = {
   aliases: [],
   description: "NOTE: This command is depreciated.\n\nIf you have an account on scratch.mit.edu, you can have me DM you every time you get a new message. Other websites not supported yet.\nTo use, first make sure I'm allowed to DM you, then type your Scratch username after the command.",
   execute(serverIndex, message, args, games, gameInProgress, pick, pick2, pickType, skip, devMode, client, db, botReadDB) {
-    var countNumber = "0";
-    var storedCountNumber = "0";
-    var messageAuthor;
-    var username;
-    var requestLink;
-    var stopQueue;
-    var i = 0;
-    var tempKey;
-    var keysLength;
+    let countNumber = "0";
+    let storedCountNumber = "0";
+    let messageAuthor;
+    let username;
+    let requestLink;
+    let stopQueue;
+    let i = 0;
+    let tempKey;
+    let keysLength;
     if (botReadDB == 0) {
       const command = require(home.resolve() + `/commands/messages.js`);
       db.list().then((keys) => {

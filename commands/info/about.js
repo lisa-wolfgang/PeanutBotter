@@ -2,13 +2,13 @@ const Discord = require("discord.js");
 const home = require("home");
 const config = require(home.resolve() + "/config.json");
 const dateCreated = new Date(2020, 7, 16);
-var today = new Date();
+let today = new Date();
 const greenCatBot = process.env.GREENCATBOT;
-var ageString;
-var ageDays;
-var ageWeeks;
-var ageMonths;
-var ageYears;
+let ageString;
+let ageDays;
+let ageWeeks;
+let ageMonths;
+let ageYears;
 module.exports = {
   name: "about",
   aliases: ["", "info", "invite", "privacy", "data", "Are you collecting my data?", "what do you know about me", "server", "manual", "add", "join", "vote", "report", "bug", "bugs", "facts", "issues", "filter", "age", "source", "suggest"],

@@ -6,14 +6,14 @@ module.exports = {
   description: "The classic game of tactics, adapted as a free-for-all game!\n\n**HOW TO PLAY**\nWhen the board appears, try to guess where the ships are hidden. There are FOUR SHIPS: the S.S. Dankme (2 units long), the Green Cat (3 units long), the Battleship (4 units long), and the Sam Rya (5 units long). Ships can be hidden either horizontally and vertically, and they may overlap each other.\n\nTo submit a coordinate, look at the grid and submit the letter of the column and the number of the row: for example, C5 or e7. You will be told if you got a hit or if you missed, but you will not be told if you've sunken a ship.\n\nThe first person to get 5 hits is the winner!",
   execute(serverIndex, message, args, games, gamePosted, pick, pick2, rotated, nothing, devMode, client, db, nothing2, initAnswer, points, players, correctAnswer) {
     const fs = require("fs");
-    var puzzle;
-    var solutionMsg;
-    var solutionGive = false;
-    var guesses = [];
-    var launch = false;
+    let puzzle;
+    let solutionMsg;
+    let solutionGive = false;
+    let guesses = [];
+    let launch = false;
 
     if (!devMode && !args.includes("skip")) {
-      var timer = 5;
+      let timer = 5;
 
       message.channel.send(`Get your psychic powers fired up! ${message.author} has started a game of battleship! The game will start in 30 seconds.\n\n**HOW TO PLAY**\nWhen the board appears, try to guess where the ships are hidden. There are FOUR SHIPS: the S.S. Dankme (2 units long), the Green Cat (3 units long), the Battleship (4 units long), and the Sam Rya (5 units long). Ships can be hidden either horizontally and vertically, and they may overlap each other.\n\nTo submit a coordinate, look at the grid and submit the letter of the column and the number of the row: for example, C5 or e7. You will be told if you got a hit or if you missed, but you will not be told if you've sunken a ship.\n\nThe first person to get 5 hits is the winner!\n\nTIP: In the future, type \`${config.prefix} battleship skip\` to start the game right away.`);
       setTimeout(() => {
