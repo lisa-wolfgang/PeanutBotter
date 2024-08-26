@@ -1,7 +1,4 @@
 module.exports = function bot() {
-  // Constants - any value that won't change
-  const Database = require("@replit/database");
-  const db = new Database();
   const fs = require("fs");
   const Discord = require("discord.js");
   const keep_alive = require("./keep_alive.js");
@@ -91,14 +88,14 @@ module.exports = function bot() {
     throw new Error("Uh-oh, you forgot to give one of the questions an answer!");
   }
 
-  // Purge the database! Only for use in the most dire of circumstances.
-  if (config.purgeDatabase) {
-    db.list().then((keys) => {
-      for (i = 0; i < keys.length; i++) {
-        db.delete(keys[i]).then(() => {});
-      }
-    });
-  }
+  // // Purge the database! Only for use in the most dire of circumstances.
+  // if (config.purgeDatabase) {
+  //   db.list().then((keys) => {
+  //     for (i = 0; i < keys.length; i++) {
+  //       db.delete(keys[i]).then(() => {});
+  //     }
+  //   });
+  // }
 
   // When bot is booted up
   client.on("ready", () => {
@@ -309,7 +306,7 @@ module.exports = function bot() {
             }
 
             // Normal commands
-            client.commands.get(command).execute(serverIndex, message, args, games, fs.readFileSync("./gamePosted.csv", "utf-8").split(","), pick[serverIndex], pick2[serverIndex], pickType[serverIndex], skip[serverIndex], devMode, client, db, 2, initAnswer[serverIndex], points[serverIndex], players[serverIndex], correctAnswer[serverIndex]);
+            client.commands.get(command).execute(serverIndex, message, args, games, fs.readFileSync("./gamePosted.csv", "utf-8").split(","), pick[serverIndex], pick2[serverIndex], pickType[serverIndex], skip[serverIndex], devMode, client, /*db*/null, 2, initAnswer[serverIndex], points[serverIndex], players[serverIndex], correctAnswer[serverIndex]);
 
             // Runs when an error occurs during command execution
           } catch (error) {
