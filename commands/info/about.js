@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
-const home = require("home");
-const config = require(home.resolve() + "/config.json");
+const config = require(import.meta.dirname + "/config.json");
 const dateCreated = new Date(2020, 7, 16);
 let today = new Date();
 const greenCatBot = process.env.GREENCATBOT;
