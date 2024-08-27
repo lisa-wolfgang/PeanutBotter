@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const home = require("home");
 const config = require("./config.json");
 module.exports = {
   name: "help",
