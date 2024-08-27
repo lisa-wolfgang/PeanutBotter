@@ -61,23 +61,19 @@ module.exports = {
 
       You can invite me to another server with this link: https://discord.com/api/oauth2/authorize?client_id=744621537960788038&permissions=392256&scope=bot
 
-      Want to keep the play space civil? PeanutModder, my alter-ego, can help with that by censoring foul language! Invite it to your server with this link: https://discord.com/oauth2/authorize?client_id=788144510826840124&permissions=44038&scope=bot
-
       View the full manual and privacy policy here, and don't forget to vote for me! :)
       https://top.gg/bot/744621537960788038
 
       **Some fun facts about me:**
       - I'm ${ageString}
-      - My creator is @lisa_wolfgang
-      - I'm hosted on repl.it
-      - My code is open-source: https://repl.it/@lisawolfgang/PeanutBotter
-      - I use the Brave browser
-      - I eat puzzles for breakfast (actually though)
-      - I'm the best at everything (except being spicy, that's PeanutModder's job)
-      - <@${greenCatBot}> is annoying \(well, that's not really a fact about me, but it is true\)
+      - My creator is @lisa-wolfgang
+      - I'm running on a Raspberry Pi
+      - My code is open-source: https://github.com/lisa-wolfgang/PeanutBotter
+      - I eat puzzles for breakfast
+      - Cats are just lil' guys \(well, that's not really a fact about me, but it is true\)
       `
       )
-      .setFooter("---   PeanutBotter v.3.7.0   -------------------------------");
+      .setFooter("---   PeanutBotter v3.7.1   -------------------------------");
 
     message.channel.send(helpEmbed);
   }
