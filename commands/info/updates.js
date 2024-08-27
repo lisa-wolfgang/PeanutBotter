@@ -12,6 +12,13 @@ module.exports = {
         .setTitle("Update Log")
         .addFields(
           {
+            name: "8/26/24 - v3.8",
+            value: `
+          - Increased \`pb wordsearch\` word bank from 251 to 401 words.
+          - Updated internally to no longer require replit.com to run the bot.
+          `
+          },
+          {
             name: "8/26/24 - v3.7.1",
             value: `
           - Removed \`pb messages\` completely.

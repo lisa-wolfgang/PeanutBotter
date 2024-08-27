@@ -73,7 +73,7 @@ module.exports = {
       - Cats are just lil' guys \(well, that's not really a fact about me, but it is true\)
       `
       )
-      .setFooter("---   PeanutBotter v3.7.1   -------------------------------");
+      .setFooter("---   PeanutBotter v3.8.0   -------------------------------");
 
     message.channel.send(helpEmbed);
   }
