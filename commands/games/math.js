@@ -1,4 +1,4 @@
-const config = require(import.meta.dirname + "/config.json");
+const config = require("./config.json");
 module.exports = {
   name: "math",
   aliases: ["mathh", "maths", "facts", "algebra", "calculate", "calculator"],
@@ -36,9 +36,9 @@ module.exports = {
 
     function question() {
       message.channel.send(`What is ${pick} ${pickType} ${pick2}?`);
-      gamePosted = fs.readFileSync(import.meta.dirname + "/gamePosted.csv", "utf-8").split(",");
+      gamePosted = fs.readFileSync("./gamePosted.csv", "utf-8").split(",");
       gamePosted[serverIndex] = true;
-      fs.writeFileSync(import.meta.dirname + "/gamePosted.csv", gamePosted.join(","));
+      fs.writeFileSync("./gamePosted.csv", gamePosted.join(","));
     }
   }
 };

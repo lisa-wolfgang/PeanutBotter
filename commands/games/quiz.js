@@ -1,4 +1,4 @@
-const config = require(import.meta.dirname + "/config.json");
+const config = require("./config.json");
 module.exports = {
   name: "quiz",
   aliases: ["quizz", "trivia"],
@@ -33,9 +33,9 @@ module.exports = {
 
     function question() {
       message.channel.send(games.questions[pick]);
-      gamePosted = fs.readFileSync(import.meta.dirname + "/gamePosted.csv", "utf-8").split(",");
+      gamePosted = fs.readFileSync("./gamePosted.csv", "utf-8").split(",");
       gamePosted[serverIndex] = true;
-      fs.writeFileSync(import.meta.dirname + "/gamePosted.csv", gamePosted.join(","));
+      fs.writeFileSync("./gamePosted.csv", gamePosted.join(","));
       //console.log(games.questions[pick])
       //console.log(games.answers[pick])
     }

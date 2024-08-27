@@ -1,4 +1,4 @@
-const config = require(import.meta.dirname + "/config.json");
+const config = require("./config.json");
 module.exports = {
   name: "wordsearch",
   aliases: ["wordwearch", "crossword"],
@@ -92,9 +92,9 @@ module.exports = {
       message.channel.send(puzzle).then((message) => {
         solutionMsg = message;
       });
-      gamePosted = fs.readFileSync(import.meta.dirname + "/gamePosted.csv", "utf-8").split(",");
+      gamePosted = fs.readFileSync("./gamePosted.csv", "utf-8").split(",");
       gamePosted[serverIndex] = true;
-      fs.writeFileSync(import.meta.dirname + "/gamePosted.csv", gamePosted.join(","));
+      fs.writeFileSync("./gamePosted.csv", gamePosted.join(","));
       if (devMode) {
         console.log(`${pick} can be located in ${puzzlePos} orientation at \(${puzzlePlaceX}, ${puzzlePlaceY}\)`);
       }

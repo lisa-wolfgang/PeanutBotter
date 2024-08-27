@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const home = require("home");
-const config = require(import.meta.dirname + "/config.json");
+const config = require("./config.json");
 module.exports = {
   name: "help",
   aliases: ["commands", "stop", "exit", "tutorial"],

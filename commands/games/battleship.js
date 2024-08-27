@@ -1,4 +1,4 @@
-const config = require(import.meta.dirname + "/config.json");
+const config = require("./config.json");
 module.exports = {
   name: "battleship",
   aliases: ["battleships"],
@@ -67,9 +67,9 @@ module.exports = {
         message.channel.send(puzzle).then((message) => {
           solutionMsg = message;
         });
-        gamePosted = fs.readFileSync(import.meta.dirname + "/gamePosted.csv", "utf-8").split(",");
+        gamePosted = fs.readFileSync("./gamePosted.csv", "utf-8").split(",");
         gamePosted[serverIndex] = true;
-        fs.writeFileSync(import.meta.dirname + "/gamePosted.csv", gamePosted.join(","));
+        fs.writeFileSync("./gamePosted.csv", gamePosted.join(","));
         if (devMode) {
           console.log(initAnswer);
         }
@@ -88,7 +88,7 @@ module.exports = {
         }
       }
 
-      if (points[players.indexOf(guessSubmission.author.id)] == 5 || (guessSubmission.content.includes(config.prefix) && guessSubmission.content.includes(`giveup`) && fs.readFileSync(import.meta.dirname + "/gamePosted.csv", "utf-8").split(",")[serverIndex] == true)) {
+      if (points[players.indexOf(guessSubmission.author.id)] == 5 || (guessSubmission.content.includes(config.prefix) && guessSubmission.content.includes(`giveup`) && fs.readFileSync("./gamePosted.csv", "utf-8").split(",")[serverIndex] == true)) {
         //console.log('Answer key posted.')
         question(2);
       }
