@@ -1,4 +1,4 @@
-const config = require("./config.json");
+const config = require("../../config.json");
 module.exports = {
   name: "math",
   aliases: ["mathh", "maths", "facts", "algebra", "calculate", "calculator"],

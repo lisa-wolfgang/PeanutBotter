@@ -1,4 +1,4 @@
-const config = require("./config.json");
+const config = require("../../config.json");
 module.exports = {
   name: "wordsearch",
   aliases: ["wordwearch", "crossword"],
